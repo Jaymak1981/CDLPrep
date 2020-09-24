@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Link, Switch, Route, withRouter } from 'react-router-dom';
 import Welcome from './Welcome.js';
 import Tests from './Tests.js';
+import FindSchools from './FindSchools.js';
 
 class School extends Component {
   render() {
@@ -22,6 +23,7 @@ class School extends Component {
           <Switch>
             <Route path={'/school'} exact component={Welcome} />
             <Route path={'/school/tests'} exact component={Tests} />
+            <Route path={'/school/findschools'} exact component={FindSchools} />
           </Switch>
         </main>
       </div>
