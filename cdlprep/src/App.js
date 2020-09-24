@@ -1,6 +1,9 @@
 import React from 'react';
 import './App.css';
 import Login from './components/Login.js';
+import School from './components/School.js';
+import { Link, Switch, Route, withRouter } from 'react-router-dom';
+import { BrowserRouter as Router } from 'react-router-dom';
 class App extends React.Component {
   constructor(props) {
     super(props);
@@ -14,9 +17,14 @@ class App extends React.Component {
   render() {
     return (
       <div>
-        <main className="main">
-          <Login />
-        </main>
+        <div>
+          <Switch>
+            <Route path={'/'} exact component={Login} />
+            <Router>
+              <Route path={'/school'} exact component={School} />
+            </Router>
+          </Switch>
+        </div>
       </div>
     );
   }
