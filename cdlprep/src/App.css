@@ -5,9 +5,13 @@ body {
   height: 100vh;
 }
 
+p {
+  font-family: 'Nunito', sans-serif;
+}
+
 .landing {
   text-align: center;
-  margin-top: 30vh;
+  margin-top: 20vh;
 }
 
 .landing-form {
@@ -16,10 +20,24 @@ body {
   align-items: center;
 }
 
+.welcome {
+  font-size: 36px;
+}
+
+.cdlprep {
+  font-weight: 900;
+  font-family: 'Pacifico', cursive;
+  font-size: 48px;
+}
+
 nav {
   width: 20vw;
   background-color: white;
   height: 40vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+  align-items: center;
 }
 
 main {
@@ -30,18 +48,34 @@ main {
 .school {
   display: flex;
   justify-content: space-evenly;
-  margin-top: 10vw;
+  margin-top: 5vw;
 }
 
 .nav-link {
   text-align: center;
   width: 60%;
-  border-bottom: 2px solid black;
+
   margin: 0 auto;
   padding: 20px;
+}
+
+.nav-sign-out,
+.nav-header {
+  border-bottom: 0px;
 }
 
 #input {
   border-bottom: 2px solid black;
   width: 30vw;
+}
+
+#navigation {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.nav-line {
+  border-bottom: 2px solid black;
+  width: 60%;
 }

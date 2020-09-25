@@ -26,15 +26,19 @@ class Login extends React.Component {
       <div>
         <div className="landing">
           {this.props.user ? (
-            <div>
-              <p>Welcome to CDL Prep!</p>
+            <div className="welcome">
+              <p>
+                Welcome to <span className="cdlprep">CDL Prep</span>
+              </p>
               <p>
                 Hello, {this.props.user.displayName || this.props.user.email}
               </p>
             </div>
           ) : (
-            <div>
-              <p>Welcome to CDL Prep!</p>
+            <div className="welcome">
+              <p>
+                Welcome to <span className="cdlprep">CDL Prep</span>
+              </p>
               <p>Please sign in.</p>
             </div>
           )}
@@ -49,7 +53,7 @@ class Login extends React.Component {
               <br />
               <a href="/school">
                 <Fragment>
-                  <MDBBtn color="brown">Continue to Classes</MDBBtn>
+                  <MDBBtn>Continue to Classes</MDBBtn>
                 </Fragment>
               </a>
             </div>
