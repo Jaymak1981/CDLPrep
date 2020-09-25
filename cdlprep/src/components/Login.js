@@ -22,6 +22,7 @@ class Login extends React.Component {
   };
 
   render() {
+    console.log(this.props.signOut);
     return (
       <div>
         <div className="landing">

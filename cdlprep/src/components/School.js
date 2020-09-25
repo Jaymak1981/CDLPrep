@@ -4,7 +4,17 @@ import Welcome from './Welcome.js';
 import Tests from './Tests.js';
 import FindSchools from './FindSchools.js';
 import { MDBBtn } from 'mdbreact';
+import withFirebaseAuth from 'react-with-firebase-auth';
+import * as firebase from 'firebase/app';
+import 'firebase/auth';
+import firebaseConfig from '../firebaseConfig';
 
+function navSignOut() {
+  firebase
+    .auth()
+    .signOut()
+    .then((window.location.href = 'http://localhost:3000/'));
+}
 class School extends Component {
   render() {
     return (
@@ -44,9 +54,9 @@ class School extends Component {
             <div className="nav-line"></div>
             <div className="nav-link nav-sign-out">
               <Fragment>
-                <a href="/">
-                  <MDBBtn gradient="blue">Sign Out</MDBBtn>
-                </a>
+                <MDBBtn gradient="blue" onClick={navSignOut}>
+                  Sign Out
+                </MDBBtn>
               </Fragment>
             </div>
           </nav>
