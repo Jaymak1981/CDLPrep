@@ -47,7 +47,7 @@ class School extends Component {
             <div className="nav-link">
               <Fragment>
                 <a href="/school/findschools">
-                  <MDBBtn gradient="blue">Find Schools</MDBBtn>
+                  <MDBBtn gradient="blue">Schools</MDBBtn>
                 </a>
               </Fragment>
             </div>
