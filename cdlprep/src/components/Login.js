@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import withFirebaseAuth from 'react-with-firebase-auth';
 import * as firebase from 'firebase/app';
 import 'firebase/auth';
 import firebaseConfig from '../firebaseConfig';
+import { MDBBtn, MDBInput } from 'mdbreact';
 
 const firebaseApp = firebase.initializeApp(firebaseConfig);
 const firebaseAppAuth = firebaseApp.auth();
@@ -40,55 +41,73 @@ class Login extends React.Component {
           {this.props.user ? (
             <div>
               {' '}
-              <button onClick={this.props.signOut}>Sign out</button>
+              <Fragment>
+                <MDBBtn color="brown" onClick={this.props.signOut}>
+                  Sign out
+                </MDBBtn>
+              </Fragment>
               <br />
               <a href="/school">
-                <button>Continue to Classes</button>
+                <Fragment>
+                  <MDBBtn color="brown">Continue to Classes</MDBBtn>
+                </Fragment>
               </a>
             </div>
           ) : (
-            <div className="landing-form">
-              <input
-                type="text"
-                placeholder="Email"
-                name="email"
-                onChange={this.handleChange}
-              ></input>
-              <br />
-              <input
-                type="text"
-                name="password"
-                placeholder="Password"
-                onChange={this.handleChange}
-              ></input>
+            <div className="landing-form form-group">
+              <Fragment>
+                {' '}
+                <MDBInput
+                  type="text"
+                  label="Email"
+                  id="input"
+                  size="lg"
+                  placeholder="Email"
+                  name="email"
+                  onChange={this.handleChange}
+                />
+                <MDBInput
+                  type="text"
+                  label="Password"
+                  id="input"
+                  size="lg"
+                  name="password"
+                  placeholder="Password"
+                  onChange={this.handleChange}
+                />
+              </Fragment>
+
               <div>
                 {' '}
-                <button
-                  onClick={() =>
-                    this.props.signInWithEmailAndPassword(
-                      this.state.email,
-                      this.state.password
-                    )
-                  }
-                >
-                  Sign in
-                </button>
-                <br />
-                <button
-                  onClick={() =>
-                    this.props.createUserWithEmailAndPassword(
-                      this.state.email,
-                      this.state.password
-                    )
-                  }
-                >
-                  Sign up
-                </button>
+                <Fragment>
+                  <MDBBtn
+                    color="brown"
+                    onClick={() =>
+                      this.props.signInWithEmailAndPassword(
+                        this.state.email,
+                        this.state.password
+                      )
+                    }
+                  >
+                    Sign in
+                  </MDBBtn>
+                  <MDBBtn
+                    color="brown"
+                    onClick={() =>
+                      this.props.createUserWithEmailAndPassword(
+                        this.state.email,
+                        this.state.password
+                      )
+                    }
+                  >
+                    Sign up
+                  </MDBBtn>{' '}
+                  <br />
+                  <MDBBtn onClick={this.props.signInWithGoogle}>
+                    Sign in with Google
+                  </MDBBtn>
+                </Fragment>
               </div>
-
-              <button onClick={this.props.signInWithGoogle}>
-                Sign in with Google
-              </button>
             </div>
           )}
         </div>

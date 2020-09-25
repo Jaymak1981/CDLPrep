@@ -10,6 +10,12 @@ body {
   margin-top: 30vh;
 }
 
+.landing-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 nav {
   width: 20vw;
   background-color: white;
@@ -33,4 +39,9 @@ main {
   border-bottom: 2px solid black;
   margin: 0 auto;
   padding: 20px;
+}
+
+#input {
+  border-bottom: 2px solid black;
+  width: 30vw;
 }
