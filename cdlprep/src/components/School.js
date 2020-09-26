@@ -18,46 +18,58 @@ function navSignOut() {
 class School extends Component {
   render() {
     return (
-      <div>
+      <div className="school-container">
         <div className="school">
           {' '}
-          <nav id="navigation">
+          <nav className="navbar navbar-expand-lg navbar-dark brown">
             {' '}
-            <div>
-              <p className="nav-link nav-header cdlprep cdlprep-div">
-                CDL Prep
-              </p>
-            </div>
-            <div className="nav-link">
-              <Fragment>
-                <a href="/school">
-                  <MDBBtn gradient="blue">Home</MDBBtn>
-                </a>
-              </Fragment>
-            </div>
-            <div className="nav-line"></div>
-            <div className="nav-link">
-              <Fragment>
-                <a href="/school/tests">
-                  <MDBBtn gradient="blue">Tests</MDBBtn>
-                </a>
-              </Fragment>
-            </div>
-            <div className="nav-line"></div>
-            <div className="nav-link">
-              <Fragment>
-                <a href="/school/findschools">
-                  <MDBBtn gradient="blue">Schools</MDBBtn>
-                </a>
-              </Fragment>
-            </div>
-            <div className="nav-line"></div>
-            <div className="nav-link nav-sign-out">
-              <Fragment>
-                <MDBBtn gradient="blue" id="sign-out-btn" onClick={navSignOut}>
-                  Sign Out
-                </MDBBtn>
-              </Fragment>
+            <p className="navbar-brand nav-header cdlprep">CDL Prep</p>
+            <button
+              class="navbar-toggler"
+              type="button"
+              data-toggle="collapse"
+              data-target="#basicExampleNav"
+              aria-controls="basicExampleNav"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div
+              className="nav-link collapse navbar-collapse"
+              id="basicExampleNav"
+            >
+              <ul className="navbar-nav mr-auto">
+                <li className="nav-item">
+                  <a href="/school" className="nav-link" id="nav-link">
+                    Home
+                  </a>
+                </li>
+                <li>
+                  <a id="nav-link" className="nav-link" href="/school/tests">
+                    Tests
+                  </a>
+                </li>
+                <li>
+                  <a
+                    id="nav-link"
+                    className="nav-link"
+                    href="/school/findschools"
+                  >
+                    Schools
+                  </a>
+                </li>
+                <li>
+                  <a
+                    id="nav-link"
+                    href={navSignOut}
+                    onClick={navSignOut}
+                    className="nav-link"
+                  >
+                    Sign Out
+                  </a>
+                </li>
+              </ul>
             </div>
           </nav>
           <main>
