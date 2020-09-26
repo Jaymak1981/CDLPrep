@@ -23,11 +23,11 @@ class School extends Component {
           {' '}
           <nav className="navbar navbar-expand-lg navbar-dark brown">
             {' '}
-            <a href="/school" className="navbar-brand nav-header cdlprep">
+            <a href="/school" className="navbar-brand cdlprep">
               CDL Prep
             </a>
             <button
-              class="navbar-toggler"
+              className="navbar-toggler"
               type="button"
               data-toggle="collapse"
               data-target="#basicExampleNav"
@@ -35,12 +35,9 @@ class School extends Component {
               aria-expanded="false"
               aria-label="Toggle navigation"
             >
-              <span class="navbar-toggler-icon"></span>
+              <span className="navbar-toggler-icon"></span>
             </button>
-            <div
-              className="nav-link collapse navbar-collapse"
-              id="basicExampleNav"
-            >
+            <div className="collapse navbar-collapse" id="basicExampleNav">
               <ul className="navbar-nav mr-auto">
                 <li className="nav-item">
                   <a href="/school" className="nav-link" id="nav-link">
