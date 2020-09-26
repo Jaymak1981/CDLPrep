@@ -54,7 +54,7 @@ class School extends Component {
             <div className="nav-line"></div>
             <div className="nav-link nav-sign-out">
               <Fragment>
-                <MDBBtn gradient="blue" onClick={navSignOut}>
+                <MDBBtn gradient="blue" id="sign-out-btn" onClick={navSignOut}>
                   Sign Out
                 </MDBBtn>
               </Fragment>

@@ -31,7 +31,7 @@ p {
 }
 
 nav {
-  width: 20vw;
+  width: 20%;
   background-color: white;
   height: 40vw;
   display: flex;
@@ -47,7 +47,7 @@ main {
 
 .school {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
   margin-top: 5vw;
 }
 
@@ -78,4 +78,8 @@ main {
 .nav-line {
   border-bottom: 2px solid black;
   width: 60%;
+}
+
+#sign-out-btn {
+  white-space: nowrap;
 }
