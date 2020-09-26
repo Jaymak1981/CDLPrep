@@ -23,7 +23,9 @@ class School extends Component {
           {' '}
           <nav className="navbar navbar-expand-lg navbar-dark brown">
             {' '}
-            <p className="navbar-brand nav-header cdlprep">CDL Prep</p>
+            <a href="/school" className="navbar-brand nav-header cdlprep">
+              CDL Prep
+            </a>
             <button
               class="navbar-toggler"
               type="button"
