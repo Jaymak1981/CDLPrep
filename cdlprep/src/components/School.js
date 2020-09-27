@@ -8,6 +8,15 @@ import withFirebaseAuth from 'react-with-firebase-auth';
 import * as firebase from 'firebase/app';
 import 'firebase/auth';
 import firebaseConfig from '../firebaseConfig';
+import {
+  MDBNavbar,
+  MDBNavbarBrand,
+  MDBNavbarNav,
+  MDBNavItem,
+  MDBNavLink,
+  MDBNavbarToggler,
+  MDBCollapse,
+} from 'mdbreact';
 
 function navSignOut() {
   firebase
@@ -16,61 +25,44 @@ function navSignOut() {
     .then((window.location.href = 'http://localhost:3000/'));
 }
 class School extends Component {
+  state = {
+    isOpen: false,
+  };
+
+  toggleCollapse = () => {
+    this.setState({ isOpen: !this.state.isOpen });
+  };
+
   render() {
     return (
       <div className="school-container">
         <div className="school">
           {' '}
-          <nav className="navbar navbar-expand-lg navbar-dark brown">
-            {' '}
-            <a href="/school" className="navbar-brand cdlprep">
-              CDL Prep
-            </a>
-            <button
-              className="navbar-toggler"
-              type="button"
-              data-toggle="collapse"
-              data-target="#basicExampleNav"
-              aria-controls="basicExampleNav"
-              aria-expanded="false"
-              aria-label="Toggle navigation"
-            >
-              <span className="navbar-toggler-icon"></span>
-            </button>
-            <div className="collapse navbar-collapse" id="basicExampleNav">
-              <ul className="navbar-nav mr-auto">
-                <li className="nav-item">
-                  <a href="/school" className="nav-link" id="nav-link">
-                    Home
-                  </a>
-                </li>
-                <li>
-                  <a id="nav-link" className="nav-link" href="/school/tests">
-                    Tests
-                  </a>
-                </li>
-                <li>
-                  <a
-                    id="nav-link"
-                    className="nav-link"
-                    href="/school/findschools"
-                  >
-                    Schools
-                  </a>
-                </li>
-                <li>
-                  <a
-                    id="nav-link"
-                    href={navSignOut}
-                    onClick={navSignOut}
-                    className="nav-link"
-                  >
+          <MDBNavbar color="brown" dark expand="md">
+            <MDBNavbarBrand>
+              <strong className="white-text cdlprep">CDL Prep</strong>
+            </MDBNavbarBrand>
+            <MDBNavbarToggler onClick={this.toggleCollapse} />
+            <MDBCollapse id="navbarCollapse3" isOpen={this.state.isOpen} navbar>
+              <MDBNavbarNav left>
+                <MDBNavItem>
+                  <MDBNavLink to="/school">Home</MDBNavLink>
+                </MDBNavItem>
+                <MDBNavItem>
+                  <MDBNavLink to="/school/tests">Tests</MDBNavLink>
+                </MDBNavItem>
+                <MDBNavItem>
+                  <MDBNavLink to="/school/findschools">Find Schools</MDBNavLink>
+                </MDBNavItem>
+                <MDBNavItem>
+                  <MDBNavLink to="#" onClick={navSignOut}>
                     Sign Out
-                  </a>
-                </li>
-              </ul>
-            </div>
-          </nav>
+                  </MDBNavLink>
+                </MDBNavItem>
+              </MDBNavbarNav>
+              <MDBNavbarNav right></MDBNavbarNav>
+            </MDBCollapse>
+          </MDBNavbar>
           <main>
             <Switch>
               <Route path={'/school'} exact component={Welcome} />
