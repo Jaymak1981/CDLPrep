@@ -27,18 +27,29 @@ function navSignOut() {
 class School extends Component {
   state = {
     isOpen: false,
+    activeItemPills: '1',
   };
 
   toggleCollapse = () => {
     this.setState({ isOpen: !this.state.isOpen });
   };
 
+  togglePills = (tab) => () => {
+    const { activePills } = this.state;
+    if (activePills !== tab) {
+      this.setState({
+        activeItemPills: tab,
+      });
+    }
+  };
+
   render() {
+    const { activeItemPills } = this.state;
     return (
       <div className="school-container">
         <div className="school">
           {' '}
-          <MDBNavbar color="brown" dark expand="md">
+          <MDBNavbar color="brown" dark expand="md" className="nav-pills">
             <MDBNavbarBrand>
               <strong className="white-text cdlprep">CDL Prep</strong>
             </MDBNavbarBrand>
@@ -46,16 +57,35 @@ class School extends Component {
             <MDBCollapse id="navbarCollapse3" isOpen={this.state.isOpen} navbar>
               <MDBNavbarNav left>
                 <MDBNavItem>
-                  <MDBNavLink to="/school">Home</MDBNavLink>
+                  <MDBNavLink
+                    active={activeItemPills === '1'}
+                    onClick={this.togglePills('1')}
+                    exact
+                    to="/school"
+                  >
+                    Home
+                  </MDBNavLink>
                 </MDBNavItem>
                 <MDBNavItem>
-                  <MDBNavLink to="/school/tests">Tests</MDBNavLink>
+                  <MDBNavLink
+                    active={activeItemPills === '2'}
+                    onClick={this.togglePills('2')}
+                    to="/school/tests"
+                  >
+                    Tests
+                  </MDBNavLink>
                 </MDBNavItem>
                 <MDBNavItem>
-                  <MDBNavLink to="/school/findschools">Find Schools</MDBNavLink>
+                  <MDBNavLink
+                    active={activeItemPills === '3'}
+                    onClick={this.togglePills('3')}
+                    to="/school/findschools"
+                  >
+                    Find Schools
+                  </MDBNavLink>
                 </MDBNavItem>
                 <MDBNavItem>
-                  <MDBNavLink to="#" onClick={navSignOut}>
+                  <MDBNavLink to="/school/signout" onClick={navSignOut}>
                     Sign Out
                   </MDBNavLink>
                 </MDBNavItem>
