@@ -5,8 +5,7 @@ class Welcome extends Component {
     return (
       <div>
         <p>
-          Welcome to the school of CDL Prep! Here you can find all your testing
-          needs to get ready for the CDL test.
+          Test Commit
         </p>
         <p>
           Welcome to the school of CDL Prep! Here you can find all your testing
