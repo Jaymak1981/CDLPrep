@@ -4,7 +4,7 @@ class Welcome extends Component {
     render() {
         return ( <div >
             <p>
-            <strong > First Time CDL Applicatnts </strong> 
+            First Time CDL Applicants 
             </p> 
             <p>
             You must first obtain a CDL Learner Permit to operate a vehicle requiring a CDL on the Highway.The Learners Permit is valid
@@ -16,13 +16,13 @@ class Welcome extends Component {
              Before a Commercial Learners Permit is issued, you are required to successfully complete Knowledge tests for the class and type of vehicle you plan to start driving.
 
              You must have the following documents before you take any tests:
-             1- A valid D.O.T. Medical Certificate
-             2- A valid Social Security Card
-             3- A valid operators license
-             4- Proof of Status
-             5- Proof of identification and age
-             6- Proof of Residence
-             7- Proof of one year of driving experience 
+             <p>1- A valid D.O.T. Medical Certificate</p>
+             <p>2- A valid Social Security Card</p>
+             <p>3- A valid operators license</p>
+             <p>4- Proof of Status</p>
+             <p>5- Proof of identification and age</p>
+             <p>6- Proof of Residence</p>
+             <p>7- Proof of one year of driving experience</p> 
             </p> 
             
             <p>
