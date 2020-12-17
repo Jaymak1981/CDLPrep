@@ -72,7 +72,7 @@ class Login extends React.Component {
                   onChange={this.handleChange}
                 />
                 <MDBInput
-                  type="text"
+                  type="password"
                   label="Password"
                   id="input"
                   size="lg"
